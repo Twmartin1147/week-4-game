@@ -1,0 +1,49 @@
+
+body {
+	font-family:'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	color: #ffffff;
+	background-image: url(../images/background-blue.jpg);
+	align-content: center;
+	margin-top: 30px;
+	width: 960px;
+	margin-left: 100px;
+}
+
+#cc {
+	background-color: #ffa500;	
+	text-align: center;
+}
+
+#main {
+
+	color:#228b22;
+	background-color: #faebd7;
+}
+
+
+img {
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+}
+
+.score {
+	background-color: #00ff00;
+
+}
+
+#yts {
+	background-color: #00ff00;
+}
+
+#randomNumber {
+	background-color: #228b22;
+	height: 100px;
+	width: 200px
+}
+
+#outcome {
+	background-color: #add8e6;
+	height: 100px;
+	width: 75px;
+}
