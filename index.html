@@ -35,11 +35,11 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3">
-				<div id="randomNumber">more shit</div>
+				<div id="randomNumber">0</div>
 			</div>
 			<div class="col-md-2" id="outcome">
-				<div class="wins">bullshit</div>
-				<div class="losses"></div>
+				<div class="wins">Wins: 0</div>
+				<div class="losses">Losses: 0</div>
 			</div>
 		</div>
 			<br>
@@ -68,6 +68,7 @@
 				<div class="score">0</div>
 			</div>
 		</div>
+		<button id="reset" type="button">Reset!</button>
 	</div>
 
 
@@ -76,11 +77,12 @@
 	var bCrystal = [Math.floor(Math.random() * 12) + 1]
 	var gCrystal = [Math.floor(Math.random() * 12) + 1]
 	var pCrystal = [Math.floor(Math.random() * 12) + 1]
-	var score = 0
-	var randomNumber = [Math.floor(Math.random() * 102) + 19]
+	var score = parseInt("")
+	var wins = 0
+	var losses = 0
 	// Random Number to start
 	$('#randomNumber').click(function generate() {
-
+		var randomNumber = [Math.floor(Math.random() * 102) + 19]
 		$('#randomNumber').text(randomNumber)
 		console.log(randomNumber)
 	});
@@ -88,38 +90,69 @@
 	// Crystals random numbers
 
 	$('#btn1').click(function yGenerate() {
-		this.score = parseInt(this.score) + parseInt(yCrystal)
-		$('.score').text(score)
-		$('#btn1').html(yCrystal)
-		$('.score').text(yCrystal + score)
-		console.log(yCrystal)
+	    var winningScore = $('#randomNumber').html();
+        var currentScore = $('.score').html();
+        var yCrystal = Math.floor(Math.random() * 12) + 1;
+        var newScore = parseInt(currentScore, 10) + yCrystal;
+        parseInt(newScore)
+        $('.score').html(newScore);
+
+        console.log("ycrystal: ", yCrystal);
+        console.log("current score: ",newScore);
 	});
 
 	$('#btn2').click(function bGenerate() {
-		this.score = parseInt(this.score) + parseInt(bCrystal)
-		$('.score').text(score)
-		$('#btn2').html(bCrystal =+ score)
-		$('.score').text(bCrystal =+ score)
-		console.log(bCrystal)
+	    var winningScore = $('#randomNumber').html();
+        var currentScore = $('.score').html();
+        var yCrystal = Math.floor(Math.random() * 12) + 1;
+        var newScore = parseInt(currentScore, 10) + bCrystal;
+        parseInt(newScore)
+        $('.score').html(newScore);
+
+        console.log("ycrystal: ", bCrystal);
+        console.log("current score: ",newScore);
 	});
 
 	$('#btn3').click(function gGenerate() {
-		this.score = parseInt(this.score) + parseInt(gCrystal)
-		$('.score').text(score)
-		$('#btn3').html(gCrystal)
-		$('.score').text(gCrystal =+ score)
-		console.log(gCrystal)
+	    var winningScore = $('#randomNumber').html();
+        var currentScore = $('.score').html();
+        var yCrystal = Math.floor(Math.random() * 12) + 1;
+        var newScore = parseInt(currentScore, 10) + gCrystal;
+        parseInt(newScore)
+        $('.score').html(newScore);
+
+        console.log("ycrystal: ", gCrystal);
+        console.log("current score: ",newScore);
 	});
 
 	$('#btn4').click(function pGenerate() {
-		this.score = parseInt(this.score) + parseInt(pCrystal)
-		$('.score').text(score)
-		$('#btn4').html(pCrystal)
-		$('.score').text(pCrystal =+ score)
-		console.log(pCrystal)
+	    var winningScore = $('#randomNumber').html();
+        var currentScore = $('.score').html();
+        var yCrystal = Math.floor(Math.random() * 12) + 1;
+        var newScore = parseInt(currentScore, 10) + pCrystal;
+        parseInt(newScore);
+        $('.score').html(newScore);
+
+        console.log("ycrystal: ", pCrystal);
+        console.log("current score: ",newScore);
 	});
 	
+	function game() {
+		if (score > '.score') {
+			prompt("You Lose!")
+		losses++
+		$('.losses').html(losses)
+	} else {
+		Prompt("You Win!")
+		wins++
+		$('.wins').html(wins)
+	}
+}
+	$('#reset').click(function() {
+		$('.score').text('0')
+		$('randomNumber').text('0')
 	
+	});
 
 
 </script>
